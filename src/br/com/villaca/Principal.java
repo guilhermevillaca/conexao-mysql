@@ -1,6 +1,5 @@
 package br.com.villaca;
 
-import com.mysql.cj.jdbc.PreparedStatementWrapper;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,17 +11,10 @@ import java.sql.SQLException;
 public class Principal {
 
     public static void main(String[] args) throws SQLException {
-
-        ConexaoMySQL.getConexaoMySQL();
-
-        System.out.println(ConexaoMySQL.statusConection());
-
-        Pessoa p = new Pessoa(2, "Villaca", "guilherme.villaca@gmail.com", "05095059967");
-
+                
+        Pessoa p = new Pessoa(2, "Villaca", "guilherme.villaca@docente.pr.senac.br", "123456");
         Connection con = ConexaoMySQL.getConexaoMySQL();
-
         PreparedStatement stmt = null;
-
         try {
 
             // Inserindo o comando SQL a ser usado
